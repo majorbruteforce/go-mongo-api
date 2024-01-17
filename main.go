@@ -2,19 +2,12 @@ package main
 
 import (
 	"github.com/majorbruteforce/go-mongo-api/router"
+	"github.com/majorbruteforce/go-mongo-api/controller"
 	"log"
 	"net/http"
 	"time"
-
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"fmt"
 )
-
-type Codot struct{
-	ID primitive.ObjectID `json:"_id, omitempty" bson:"_id,omitempty"`
-	Type string `json:"type,omitempty"`
-	Defeated bool `json:"defeated,omitempty"`
-}
-
 
 func main() {
 	r := router.Router()
@@ -26,5 +19,6 @@ func main() {
 	}
 
 	log.Fatal(srv.ListenAndServe())
+	
 
 }
